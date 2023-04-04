@@ -1,25 +1,16 @@
 import { Formik, Form, ErrorMessage } from 'formik';
-import { nanoid } from 'nanoid';
-// import { object, string, number } from 'yup';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/actions';
 import { Field, Button } from './ContactForm.styled';
 
-export function ContactForm({ onSubmit }) {
-  //   // const schema = object({
-  //   //   name: string().min(1).required(),
-  //   //   number: number().min(7).max(8).required(),
-  //   // });
+export const ContactForm = () => {
+  const dispatch = useDispatch();
 
   return (
     <Formik
       initialValues={{ name: '', number: '' }}
-      // validationSchema={schema}
       onSubmit={(values, actions) => {
-        onSubmit({
-          ...values,
-          id: nanoid(),
-        });
-        console.log(values);
+        dispatch(addContact(values));
         actions.resetForm();
       }}
     >
@@ -38,8 +29,4 @@ export function ContactForm({ onSubmit }) {
       </Form>
     </Formik>
   );
-}
-
-ContactForm.PropType = {
-  onSubmit: PropTypes.func.isRequired,
 };

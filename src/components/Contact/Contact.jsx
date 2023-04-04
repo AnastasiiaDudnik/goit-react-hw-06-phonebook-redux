@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/actions';
 import { ListButton } from './Contact.styled';
 
-export const Contact = ({ id, name, number }) => {
+export const Contact = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
 
