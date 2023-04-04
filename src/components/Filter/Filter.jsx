@@ -10,8 +10,6 @@ export const Filter = () => {
 
   const handleChange = evt => {
     const value = evt.target.value;
-    console.log(value);
-    console.log(filter);
     dispatch(setContactFilter(value));
   };
 
