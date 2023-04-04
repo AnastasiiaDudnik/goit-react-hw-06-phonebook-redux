@@ -3,11 +3,7 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { Layout } from './Layout/Layout';
 
-export function App() {
-  // const visibleContacts = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(filter.toLowerCase())
-  // );
-
+export const App = () => {
   return (
     <Layout>
       <h1>Phonebook</h1>
@@ -18,4 +14,4 @@ export function App() {
       <ContactList />
     </Layout>
   );
-}
+};
