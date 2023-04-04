@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteNumber } from 'redux/actions';
+import { deleteContact } from 'redux/actions';
 import { ListButton } from './Contact.styled';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
-  const handleDelete = dispatch(deleteNumber(id));
+  const handleDelete = () => dispatch(deleteContact(id));
 
   return (
     <>
